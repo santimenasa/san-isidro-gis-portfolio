@@ -1,0 +1,127 @@
+// =========================================================================
+// Project: Multitemporal Land Accretion & Estuarine Island Genesis Tracker
+// Study Area: Front of Paraná / Luján Delta (San Isidro - Río de la Plata)
+// Period: 1994 (Landsat 5 TM) vs 2026 (Sentinel-2 MSI)
+// Method: Modified Normalized Difference Water Index (MNDWI)
+// =========================================================================
+
+// 1. Assign Region of Interest (ROI) and Center View
+// Note: Ensure a polygon named 'geometry' is drawn or defined in the ROI imports
+var roi = geometry;
+Map.centerObject(roi, 10);
+
+// -------------------------------------------------------------------------
+// 2. Historical Baseline Collection (Landsat 5 TM: 1994-1998)
+// -------------------------------------------------------------------------
+function prepL5(image) {
+  // Scale surface reflectance factors (Green: SR_B2, SWIR1: SR_B5)
+  var optical = image.select(['SR_B2', 'SR_B5']).multiply(0.0000275).add(-0.2);
+  return optical;
+}
+
+var l5 = ee.ImageCollection('LANDSAT/LT05/C02/T1_L2')
+  .filterBounds(roi)
+  .filterDate('1994-01-01', '1998-12-31')
+  .filter(ee.Filter.lt('CLOUD_COVER', 15))
+  .map(prepL5)
+  .median()
+  .clip(roi);
+
+// Historical MNDWI: (Green - SWIR1) / (Green + SWIR1)
+var mndwi1994 = l5.normalizedDifference(['SR_B2', 'SR_B5']).rename('mndwi_1994');
+
+// -------------------------------------------------------------------------
+// 3. Recent Collection (Sentinel-2 MSI Harmonized: 2024-2026)
+// -------------------------------------------------------------------------
+function prepS2(image) {
+  // Scale optical reflectance (Green: B3, SWIR1: B11)
+  var optical = image.select(['B3', 'B11']).divide(10000);
+  return optical;
+}
+
+var s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
+  .filterBounds(roi)
+  .filterDate('2024-01-01', '2026-08-25')
+  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 10))
+  .map(prepS2)
+  .median()
+  .clip(roi);
+
+// Recent MNDWI: (Green - SWIR1) / (Green + SWIR1)
+var mndwi2026 = s2.normalizedDifference(['B3', 'B11']).rename('mndwi_2026');
+
+// -------------------------------------------------------------------------
+// 4. Threshold Classification
+// Estuarine water threshold: MNDWI < -0.15 indicates emergent land/vegetation
+// -------------------------------------------------------------------------
+var waterThreshold = -0.15;
+var land1994 = mndwi1994.lt(waterThreshold).rename('land_1994');
+var land2026 = mndwi2026.lt(waterThreshold).rename('land_2026');
+
+// -------------------------------------------------------------------------
+// 5. Change Detection (Boolean Logic: Land in 2026 AND Water in 1994)
+// -------------------------------------------------------------------------
+var newLand = land2026.eq(1).and(land1994.eq(0)).selfMask();
+
+// -------------------------------------------------------------------------
+// 6. Map Layer Rendering in Code Editor
+// -------------------------------------------------------------------------
+Map.clear();
+Map.addLayer(land1994.selfMask(), {palette: ['#8C857B']}, 'Baseline Land (~1994)');
+Map.addLayer(newLand, {palette: ['#00C590']}, 'Accreted Land & Islands (1994-2026)');
+
+// Study Area Boundary Outline
+var outline = ee.Image().byte().paint({
+  featureCollection: ee.FeatureCollection([ee.Feature(roi)]),
+  color: 1,
+  width: 1.5
+});
+Map.addLayer(outline, {palette: ['#333333']}, 'Study Area (ROI)');
+
+// =========================================================================
+// 7. Vector Export Tasks to Google Drive (Shapefile format)
+// =========================================================================
+
+// Export Layer 1: Study Area ROI
+var roiFeature = ee.FeatureCollection([ee.Feature(roi, {name: 'Study_Area_ROI'})]);
+Export.table.toDrive({
+  collection: roiFeature,
+  description: '01_Study_Area_ROI',
+  folder: 'Delta_Accretion_Project',
+  fileNamePrefix: 'Study_Area_ROI',
+  fileFormat: 'SHP'
+});
+
+// Export Layer 2: Baseline Land (~1994)
+var baselineLandVector = land1994.selfMask().reduceToVectors({
+  geometry: roi,
+  crs: 'EPSG:4326',
+  scale: 30,
+  geometryType: 'polygon',
+  eightConnected: false,
+  maxPixels: 1e9
+});
+Export.table.toDrive({
+  collection: baselineLandVector,
+  description: '02_Baseline_Land_1994',
+  folder: 'Delta_Accretion_Project',
+  fileNamePrefix: 'Baseline_Land_1994',
+  fileFormat: 'SHP'
+});
+
+// Export Layer 3: Newly Accreted Islands (1994-2026)
+var newLandVector = newLand.reduceToVectors({
+  geometry: roi,
+  crs: 'EPSG:4326',
+  scale: 15,
+  geometryType: 'polygon',
+  eightConnected: false,
+  maxPixels: 1e9
+});
+Export.table.toDrive({
+  collection: newLandVector,
+  description: '03_Accreted_Islands_1994_2026',
+  folder: 'Delta_Accretion_Project',
+  fileNamePrefix: 'Accreted_Islands_1994_2026',
+  fileFormat: 'SHP'
+});
