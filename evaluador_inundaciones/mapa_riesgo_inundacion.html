@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1925fcd742c3564e2574c5601e385b9d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1925fcd742c3564e2574c5601e385b9d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1925fcd742c3564e2574c5601e385b9d = L.map(
+                "map_1925fcd742c3564e2574c5601e385b9d",
+                {
+                    center: [-34.44650625581396, -58.56165376744186],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c489b193f38e4366240e093c6de169ec = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Esri, DeLorme, NAVTEQ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c489b193f38e4366240e093c6de169ec.addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+        function geo_json_486bddf8d3b6d41a27585d5873a23bf2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#08519c", "fillColor": "#3182bd", "fillOpacity": 0.35, "weight": 2};
+            }
+        }
+
+        function geo_json_486bddf8d3b6d41a27585d5873a23bf2_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_486bddf8d3b6d41a27585d5873a23bf2 = L.geoJson(null, {
+                onEachFeature: geo_json_486bddf8d3b6d41a27585d5873a23bf2_onEachFeature,
+            
+                style: geo_json_486bddf8d3b6d41a27585d5873a23bf2_styler,
+            ...{
+}
+        });
+
+        function geo_json_486bddf8d3b6d41a27585d5873a23bf2_add (data) {
+            geo_json_486bddf8d3b6d41a27585d5873a23bf2
+                .addData(data);
+        }
+            geo_json_486bddf8d3b6d41a27585d5873a23bf2_add({"bbox": [-58.599848363256356, -34.46912164338996, -58.56984301528593, -34.44483666281807], "features": [{"bbox": [-58.599848363256356, -34.46912164338996, -58.56984301528593, -34.44483666281807], "geometry": {"coordinates": [[[-58.59430003954576, -34.46877235718873], [-58.59464574839448, -34.46890220705125], [-58.59500534756112, -34.46900291056858], [-58.595375264821776, -34.469073467340415], [-58.59575182541671, -34.46911317644206], [-58.59613128856642, -34.46912164338996], [-58.596509884645045, -34.46909878406236], [-58.59688385264068, -34.46904482553554], [-58.597249477530205, -34.4689603038278], [-58.597603127196486, -34.46884605857313], [-58.59794128852092, -34.468703224678066], [-58.59826060229175, -34.46853322104421], [-58.59855789658145, -34.468337736469095], [-58.598830218260765, -34.46811871286514], [-58.599074862336586, -34.467878325964286], [-58.59928939882136, -34.46761896369934], [-58.599471696867965, -34.467343202478126], [-58.599619945929675, -34.46705378158533], [-58.5997326737357, -34.46675357596718], [-58.599808760903976, -34.46644556766958], [-58.5998474520463, -34.466132816213104], [-58.599848363256356, -34.46581842819982], [-58.599811485906834, -34.46550552645359], [-58.59973718671819, -34.46519721900076], [-58.59962620409951, -34.46489656819895], [-58.59947964079818, -34.464606560321066], [-58.59929895293217, -34.464330075896164], [-58.59908593551418, -34.464069861101684], [-58.59884270461236, -34.463828500491374], [-58.58124259743942, -34.44803089626278], [-58.581220373036594, -34.44801111338562], [-58.57875036039546, -34.44583116853534], [-58.578479796402746, -34.44561484312735], [-58.57818479807611, -34.44542167978403], [-58.577868242142536, -34.4452535620593], [-58.57753321548022, -34.4451121292723], [-58.577182985021715, -34.44499876052687], [-58.57682096590398, -34.4449145612682], [-58.57645068817559, -34.44486035250723], [-58.5760757623853, -34.44483666281807], [-58.57569984438701, -34.44484372318577], [-58.575326599703814, -34.44488146475539], [-58.574959667798026, -34.44494951950341], [-58.574602626594896, -34.44504722382555], [-58.57425895760573, -34.44517362500576], [-58.57393201198928, -34.4453274905035], [-58.57362497788268, -34.44550731996884], [-58.57334084931938, -34.44571135986835], [-58.57308239703736, -34.44593762057944], [-58.57285214146171, -34.44618389578671], [-58.57052709318377, -34.4489418358779], [-58.57033194646991, -34.4491988221528], [-58.57016752518635, -34.44947015916433], [-58.570035352650116, -34.44975333354276], [-58.56993665350135, -34.45004572224548], [-58.56987234234889, -34.450344616851055], [-58.56984301528593, -34.45064724864514], [-58.569848944355236, -34.45095081426585], [-58.56989007501517, -34.451252501671085], [-58.56996602663082, -34.45154951618741], [-58.570076095986195, -34.45183910639923], [-58.57318783194568, -34.45883118976426], [-58.57332514694818, -34.459100537300586], [-58.57349198050019, -34.459358196814584], [-58.57368689954454, -34.459601954661686], [-58.573908229689074, -34.45982971661181], [-58.574154069586285, -34.46003952584516], [-58.57442230726481, -34.46022957976754], [-58.57471063827252, -34.4603982455013], [-58.575016585475346, -34.4605440739178], [-58.59430003954576, -34.46877235718873]]], "type": "Polygon"}, "id": "0", "properties": {"zona": "\u00c1rea de Afectaci\u00f3n"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_486bddf8d3b6d41a27585d5873a23bf2.addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var marker_4afd6ec0edfdb16dee20ccfa08b3fd86 = L.marker(
+                [-34.455636, -58.578313],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_c9e79fc6874595a560e86bf5b366fb12 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1bde78cfa8a4e55701648bab26c73709 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_8ee5eaa21c8f7f030f4d5b4db6156f5a = $(`<div id="html_8ee5eaa21c8f7f030f4d5b4db6156f5a" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Secundaria Nº16</b><br>     Tipo: Educacion<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_1bde78cfa8a4e55701648bab26c73709.setContent(html_8ee5eaa21c8f7f030f4d5b4db6156f5a);
+            
+        
+
+        marker_4afd6ec0edfdb16dee20ccfa08b3fd86.bindPopup(popup_1bde78cfa8a4e55701648bab26c73709)
+        ;
+
+        
+    
+    
+            marker_4afd6ec0edfdb16dee20ccfa08b3fd86.bindTooltip(
+                `<div>
+                     Escuela de Educación Secundaria Nº16
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4afd6ec0edfdb16dee20ccfa08b3fd86.setIcon(icon_c9e79fc6874595a560e86bf5b366fb12);
+            
+    
+            var marker_4b57f2e9b2b588aa441fd599f68b2564 = L.marker(
+                [-34.45774, -58.576761],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_e3dbef78c652affc04dda4cb14691ad6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecba18afea5160a4603bd69a0bea9841 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_9d9906add54f8d5850693f564a1a7ebd = $(`<div id="html_9d9906add54f8d5850693f564a1a7ebd" style="width: 100.0%; height: 100.0%;">     <b>Centro de Adultos Nº710/03</b><br>     Tipo: Educacion<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_ecba18afea5160a4603bd69a0bea9841.setContent(html_9d9906add54f8d5850693f564a1a7ebd);
+            
+        
+
+        marker_4b57f2e9b2b588aa441fd599f68b2564.bindPopup(popup_ecba18afea5160a4603bd69a0bea9841)
+        ;
+
+        
+    
+    
+            marker_4b57f2e9b2b588aa441fd599f68b2564.bindTooltip(
+                `<div>
+                     Centro de Adultos Nº710/03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4b57f2e9b2b588aa441fd599f68b2564.setIcon(icon_e3dbef78c652affc04dda4cb14691ad6);
+            
+    
+            var marker_d4e17e042b956a9ae909eb943576db35 = L.marker(
+                [-34.44799, -58.575974],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_a9f32979c069127c4d18841edb73654e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53cf608a67f32bc5ba2709560c0d43a9 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_1e5ae83abdee8ee4975fd57b5b83d507 = $(`<div id="html_1e5ae83abdee8ee4975fd57b5b83d507" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Secundaria Nº1 Manuel Belgrano</b><br>     Tipo: Educacion<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_53cf608a67f32bc5ba2709560c0d43a9.setContent(html_1e5ae83abdee8ee4975fd57b5b83d507);
+            
+        
+
+        marker_d4e17e042b956a9ae909eb943576db35.bindPopup(popup_53cf608a67f32bc5ba2709560c0d43a9)
+        ;
+
+        
+    
+    
+            marker_d4e17e042b956a9ae909eb943576db35.bindTooltip(
+                `<div>
+                     Escuela de Educación Secundaria Nº1 Manuel Belgrano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d4e17e042b956a9ae909eb943576db35.setIcon(icon_a9f32979c069127c4d18841edb73654e);
+            
+    
+            var marker_7d245f8e808d6c1faf5200e8f683a148 = L.marker(
+                [-34.45017, -58.578444],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_c902e7cc1349fa10323e2a78b996423f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a08cdf15b702d8bea87b0ec0b658c9bc = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_b7d44be60ce0e34d6ddf9b7f72425e2d = $(`<div id="html_b7d44be60ce0e34d6ddf9b7f72425e2d" style="width: 100.0%; height: 100.0%;">     <b>Centro Medico Familiar La Union</b><br>     Tipo: Salud<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_a08cdf15b702d8bea87b0ec0b658c9bc.setContent(html_b7d44be60ce0e34d6ddf9b7f72425e2d);
+            
+        
+
+        marker_7d245f8e808d6c1faf5200e8f683a148.bindPopup(popup_a08cdf15b702d8bea87b0ec0b658c9bc)
+        ;
+
+        
+    
+    
+            marker_7d245f8e808d6c1faf5200e8f683a148.bindTooltip(
+                `<div>
+                     Centro Medico Familiar La Union
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7d245f8e808d6c1faf5200e8f683a148.setIcon(icon_c902e7cc1349fa10323e2a78b996423f);
+            
+    
+            var marker_5848332a41c16eee60e483ae9fe0bf44 = L.marker(
+                [-34.450748, -58.573649],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_1a2387ac1207ff2d14127b9670c13806 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e17c46c853308df9dc5d10456f2100a1 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_810f7f0c71a40fc27fb6fccbca391a45 = $(`<div id="html_810f7f0c71a40fc27fb6fccbca391a45" style="width: 100.0%; height: 100.0%;">     <b>Centro De Salud Villa Federal</b><br>     Tipo: Salud<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_e17c46c853308df9dc5d10456f2100a1.setContent(html_810f7f0c71a40fc27fb6fccbca391a45);
+            
+        
+
+        marker_5848332a41c16eee60e483ae9fe0bf44.bindPopup(popup_e17c46c853308df9dc5d10456f2100a1)
+        ;
+
+        
+    
+    
+            marker_5848332a41c16eee60e483ae9fe0bf44.bindTooltip(
+                `<div>
+                     Centro De Salud Villa Federal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5848332a41c16eee60e483ae9fe0bf44.setIcon(icon_1a2387ac1207ff2d14127b9670c13806);
+            
+    
+            var marker_81eeaf31d19f01b3fe327fa6d2610f4f = L.marker(
+                [-34.45938, -58.583347],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_f018dc5df21f1683c37d96afb5db3bc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4df89efc4aafbc5d2b611b5c90db9eeb = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_89df54b1976ce156c6f0c44d46c2f1b6 = $(`<div id="html_89df54b1976ce156c6f0c44d46c2f1b6" style="width: 100.0%; height: 100.0%;">     <b>Unidad Sanitaria San Ginés</b><br>     Tipo: Salud<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_4df89efc4aafbc5d2b611b5c90db9eeb.setContent(html_89df54b1976ce156c6f0c44d46c2f1b6);
+            
+        
+
+        marker_81eeaf31d19f01b3fe327fa6d2610f4f.bindPopup(popup_4df89efc4aafbc5d2b611b5c90db9eeb)
+        ;
+
+        
+    
+    
+            marker_81eeaf31d19f01b3fe327fa6d2610f4f.bindTooltip(
+                `<div>
+                     Unidad Sanitaria San Ginés
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81eeaf31d19f01b3fe327fa6d2610f4f.setIcon(icon_f018dc5df21f1683c37d96afb5db3bc9);
+            
+    
+            var marker_118654bcc37881353b3137561151b89b = L.marker(
+                [-34.465968, -58.596044],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_3c6858c1e2ca2da1a8a441b38c3bda0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_322742e8a44ce3267752166e558ebe54 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_b34bd6df67ac50b5882ca8bb0f990e2d = $(`<div id="html_b34bd6df67ac50b5882ca8bb0f990e2d" style="width: 100.0%; height: 100.0%;">     <b>Centro de Salud Doctor Finochietto</b><br>     Tipo: Salud<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_322742e8a44ce3267752166e558ebe54.setContent(html_b34bd6df67ac50b5882ca8bb0f990e2d);
+            
+        
+
+        marker_118654bcc37881353b3137561151b89b.bindPopup(popup_322742e8a44ce3267752166e558ebe54)
+        ;
+
+        
+    
+    
+            marker_118654bcc37881353b3137561151b89b.bindTooltip(
+                `<div>
+                     Centro de Salud Doctor Finochietto
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_118654bcc37881353b3137561151b89b.setIcon(icon_3c6858c1e2ca2da1a8a441b38c3bda0a);
+            
+    
+            var marker_b5ae6d636615c336ff58df376d1632e2 = L.marker(
+                [-34.457597, -58.577207],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_daad84c517542a57244958a77f958869 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "warning",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e74657c90b58869708ad279bd289279b = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_08f320bf6a14d9eead0b5b4033aa17e7 = $(`<div id="html_08f320bf6a14d9eead0b5b4033aa17e7" style="width: 100.0%; height: 100.0%;">     <b>Unidad Sanitaria H. Bertres</b><br>     Tipo: Salud<br>     Estado: <b style='color:red;'>Riesgo Alto (Inundable)</b>     </div>`)[0];
+                popup_e74657c90b58869708ad279bd289279b.setContent(html_08f320bf6a14d9eead0b5b4033aa17e7);
+            
+        
+
+        marker_b5ae6d636615c336ff58df376d1632e2.bindPopup(popup_e74657c90b58869708ad279bd289279b)
+        ;
+
+        
+    
+    
+            marker_b5ae6d636615c336ff58df376d1632e2.bindTooltip(
+                `<div>
+                     Unidad Sanitaria H. Bertres
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b5ae6d636615c336ff58df376d1632e2.setIcon(icon_daad84c517542a57244958a77f958869);
+            
+    
+            var marker_930aeef007768a06cee7d372cd2c784e = L.marker(
+                [-34.4444, -58.550998],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_b586ca4615fc723e89bd1c8cf56b6681 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc36bee4b38bd43499ca9bfef73f28c4 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_6b43108bbcc2db9d82d5d824fcbbe080 = $(`<div id="html_6b43108bbcc2db9d82d5d824fcbbe080" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Primaria Nº6 Victoriano E Montes</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_cc36bee4b38bd43499ca9bfef73f28c4.setContent(html_6b43108bbcc2db9d82d5d824fcbbe080);
+            
+        
+
+        marker_930aeef007768a06cee7d372cd2c784e.bindPopup(popup_cc36bee4b38bd43499ca9bfef73f28c4)
+        ;
+
+        
+    
+    
+            marker_930aeef007768a06cee7d372cd2c784e.bindTooltip(
+                `<div>
+                     Escuela de Educación Primaria Nº6 Victoriano E Montes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_930aeef007768a06cee7d372cd2c784e.setIcon(icon_b586ca4615fc723e89bd1c8cf56b6681);
+            
+    
+            var marker_4a2c63664d5b373d7a780367190d4ff2 = L.marker(
+                [-34.44275, -58.554624],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_d8a43e5e471c35c671af2a18f137d6ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cc41a5b0b6b90d00c2a0bd87221fb0aa = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_69addea39e086adaabc512c2593ea83a = $(`<div id="html_69addea39e086adaabc512c2593ea83a" style="width: 100.0%; height: 100.0%;">     <b>Colegio San Fernando</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_cc41a5b0b6b90d00c2a0bd87221fb0aa.setContent(html_69addea39e086adaabc512c2593ea83a);
+            
+        
+
+        marker_4a2c63664d5b373d7a780367190d4ff2.bindPopup(popup_cc41a5b0b6b90d00c2a0bd87221fb0aa)
+        ;
+
+        
+    
+    
+            marker_4a2c63664d5b373d7a780367190d4ff2.bindTooltip(
+                `<div>
+                     Colegio San Fernando
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4a2c63664d5b373d7a780367190d4ff2.setIcon(icon_d8a43e5e471c35c671af2a18f137d6ea);
+            
+    
+            var marker_2bbd35902f7c0c379d7ba2a8fcf3e139 = L.marker(
+                [-34.450238, -58.567166],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_10645e61f135d5f70ce6915b75b312a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7eb1835952921b98906750b8d4758084 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_1495fb4febd35a22ab36a601515862b4 = $(`<div id="html_1495fb4febd35a22ab36a601515862b4" style="width: 100.0%; height: 100.0%;">     <b>Escuela Primaria 38 Regimiento 1 Infanteria Patricios</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_7eb1835952921b98906750b8d4758084.setContent(html_1495fb4febd35a22ab36a601515862b4);
+            
+        
+
+        marker_2bbd35902f7c0c379d7ba2a8fcf3e139.bindPopup(popup_7eb1835952921b98906750b8d4758084)
+        ;
+
+        
+    
+    
+            marker_2bbd35902f7c0c379d7ba2a8fcf3e139.bindTooltip(
+                `<div>
+                     Escuela Primaria 38 Regimiento 1 Infanteria Patricios
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2bbd35902f7c0c379d7ba2a8fcf3e139.setIcon(icon_10645e61f135d5f70ce6915b75b312a0);
+            
+    
+            var marker_ab751b6602c6b298165dd52d4db870e3 = L.marker(
+                [-34.445881, -58.566602],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_b5bfa609a78ae2175ba5bc0af21d5570 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6a892921c3fdef4d10c96076a7f7186c = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_70e1909057eccd3635b284c27f8066db = $(`<div id="html_70e1909057eccd3635b284c27f8066db" style="width: 100.0%; height: 100.0%;">     <b>Colegio San Rafael</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_6a892921c3fdef4d10c96076a7f7186c.setContent(html_70e1909057eccd3635b284c27f8066db);
+            
+        
+
+        marker_ab751b6602c6b298165dd52d4db870e3.bindPopup(popup_6a892921c3fdef4d10c96076a7f7186c)
+        ;
+
+        
+    
+    
+            marker_ab751b6602c6b298165dd52d4db870e3.bindTooltip(
+                `<div>
+                     Colegio San Rafael
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab751b6602c6b298165dd52d4db870e3.setIcon(icon_b5bfa609a78ae2175ba5bc0af21d5570);
+            
+    
+            var marker_1b0859ccb071b326fd0129404b8962da = L.marker(
+                [-34.44617, -58.546687],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_641b2b04be4ff0925a44a92e53271dc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2d1041fe5ad8c0d6c312437a1d7a93f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_9cc4a178a549cbcb5bee13ddfdb38082 = $(`<div id="html_9cc4a178a549cbcb5bee13ddfdb38082" style="width: 100.0%; height: 100.0%;">     <b>Aprendizaje Cristiano Integral Buenos Aires</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_e2d1041fe5ad8c0d6c312437a1d7a93f.setContent(html_9cc4a178a549cbcb5bee13ddfdb38082);
+            
+        
+
+        marker_1b0859ccb071b326fd0129404b8962da.bindPopup(popup_e2d1041fe5ad8c0d6c312437a1d7a93f)
+        ;
+
+        
+    
+    
+            marker_1b0859ccb071b326fd0129404b8962da.bindTooltip(
+                `<div>
+                     Aprendizaje Cristiano Integral Buenos Aires
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1b0859ccb071b326fd0129404b8962da.setIcon(icon_641b2b04be4ff0925a44a92e53271dc9);
+            
+    
+            var marker_264dcb52c13353b883648d9df9a5a304 = L.marker(
+                [-34.438924, -58.548114],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_933e1c2389d9fa3b13a7ed7686a53a79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33875f307b316f0843c289cbc54dfb93 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_4316a16c1be49738e398a8ef4b9e4303 = $(`<div id="html_4316a16c1be49738e398a8ef4b9e4303" style="width: 100.0%; height: 100.0%;">     <b>YCA San Fernando 1</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_33875f307b316f0843c289cbc54dfb93.setContent(html_4316a16c1be49738e398a8ef4b9e4303);
+            
+        
+
+        marker_264dcb52c13353b883648d9df9a5a304.bindPopup(popup_33875f307b316f0843c289cbc54dfb93)
+        ;
+
+        
+    
+    
+            marker_264dcb52c13353b883648d9df9a5a304.bindTooltip(
+                `<div>
+                     YCA San Fernando 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_264dcb52c13353b883648d9df9a5a304.setIcon(icon_933e1c2389d9fa3b13a7ed7686a53a79);
+            
+    
+            var marker_c25e99b4c56c549700f2915a001a4527 = L.marker(
+                [-34.450243, -58.568941],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_618c7c32d3f83a0eadec4a7f8433fee1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_298a65b3fda1ce0ac8086ff65d8f1079 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_0218e3913f9f857932d2ca6dfaa780f0 = $(`<div id="html_0218e3913f9f857932d2ca6dfaa780f0" style="width: 100.0%; height: 100.0%;">     <b>Escuela Secundaria de la Comunidad Cristiana</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_298a65b3fda1ce0ac8086ff65d8f1079.setContent(html_0218e3913f9f857932d2ca6dfaa780f0);
+            
+        
+
+        marker_c25e99b4c56c549700f2915a001a4527.bindPopup(popup_298a65b3fda1ce0ac8086ff65d8f1079)
+        ;
+
+        
+    
+    
+            marker_c25e99b4c56c549700f2915a001a4527.bindTooltip(
+                `<div>
+                     Escuela Secundaria de la Comunidad Cristiana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c25e99b4c56c549700f2915a001a4527.setIcon(icon_618c7c32d3f83a0eadec4a7f8433fee1);
+            
+    
+            var marker_bd8613cb0a2a8666bd74140011a183e2 = L.marker(
+                [-34.450715, -58.570057],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_a0eb8e183edbd801e5fd05878b3737be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_98c06fc34d1f302f0a2dd93a6860bc2f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_f4a155437b88453551a047c233627ddb = $(`<div id="html_f4a155437b88453551a047c233627ddb" style="width: 100.0%; height: 100.0%;">     <b>Escuela Primaria de la Comunidad Cristiana</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_98c06fc34d1f302f0a2dd93a6860bc2f.setContent(html_f4a155437b88453551a047c233627ddb);
+            
+        
+
+        marker_bd8613cb0a2a8666bd74140011a183e2.bindPopup(popup_98c06fc34d1f302f0a2dd93a6860bc2f)
+        ;
+
+        
+    
+    
+            marker_bd8613cb0a2a8666bd74140011a183e2.bindTooltip(
+                `<div>
+                     Escuela Primaria de la Comunidad Cristiana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd8613cb0a2a8666bd74140011a183e2.setIcon(icon_a0eb8e183edbd801e5fd05878b3737be);
+            
+    
+            var marker_025522490c2760c5d40cfc8ae60ddf6b = L.marker(
+                [-34.436596, -58.560069],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_1265378a6783b580847b46eee4069811 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_658e08e4afe23f3ff6423a07b8f01dac = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_c1a80f1f82ff000b7df95464c9227d24 = $(`<div id="html_c1a80f1f82ff000b7df95464c9227d24" style="width: 100.0%; height: 100.0%;">     <b>Escuela San Martín de Tours</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_658e08e4afe23f3ff6423a07b8f01dac.setContent(html_c1a80f1f82ff000b7df95464c9227d24);
+            
+        
+
+        marker_025522490c2760c5d40cfc8ae60ddf6b.bindPopup(popup_658e08e4afe23f3ff6423a07b8f01dac)
+        ;
+
+        
+    
+    
+            marker_025522490c2760c5d40cfc8ae60ddf6b.bindTooltip(
+                `<div>
+                     Escuela San Martín de Tours
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_025522490c2760c5d40cfc8ae60ddf6b.setIcon(icon_1265378a6783b580847b46eee4069811);
+            
+    
+            var marker_08885cb1d6a653ee9421410b3fc0f0fd = L.marker(
+                [-34.43652, -58.559977],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4f16a17e20cb38f26e4d95f629e2856f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_936656d2030005a32bddf4ef8a5d5198 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_e880e3e1bf054b135da45612a7b6d4d3 = $(`<div id="html_e880e3e1bf054b135da45612a7b6d4d3" style="width: 100.0%; height: 100.0%;">     <b>Instituto San Martín de Tours</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_936656d2030005a32bddf4ef8a5d5198.setContent(html_e880e3e1bf054b135da45612a7b6d4d3);
+            
+        
+
+        marker_08885cb1d6a653ee9421410b3fc0f0fd.bindPopup(popup_936656d2030005a32bddf4ef8a5d5198)
+        ;
+
+        
+    
+    
+            marker_08885cb1d6a653ee9421410b3fc0f0fd.bindTooltip(
+                `<div>
+                     Instituto San Martín de Tours
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08885cb1d6a653ee9421410b3fc0f0fd.setIcon(icon_4f16a17e20cb38f26e4d95f629e2856f);
+            
+    
+            var marker_563667e3ea8ad6b246c255e5599a35e3 = L.marker(
+                [-34.44587, -58.566572],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_d02250e9b3d078bb4c43fff21245b8b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d841daa030bbdb859bc6604f4815e06f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_0478c3a65ec5423f694632b60dd53e7f = $(`<div id="html_0478c3a65ec5423f694632b60dd53e7f" style="width: 100.0%; height: 100.0%;">     <b>Centro Cultural San Rafael.</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_d841daa030bbdb859bc6604f4815e06f.setContent(html_0478c3a65ec5423f694632b60dd53e7f);
+            
+        
+
+        marker_563667e3ea8ad6b246c255e5599a35e3.bindPopup(popup_d841daa030bbdb859bc6604f4815e06f)
+        ;
+
+        
+    
+    
+            marker_563667e3ea8ad6b246c255e5599a35e3.bindTooltip(
+                `<div>
+                     Centro Cultural San Rafael.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_563667e3ea8ad6b246c255e5599a35e3.setIcon(icon_d02250e9b3d078bb4c43fff21245b8b8);
+            
+    
+            var marker_81bc4a4d30b9eee9227155213e39d5c1 = L.marker(
+                [-34.445876, -58.566557],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_269a38e53ed455f8fcf29a652a2a89e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf49f5d23440b35653a8bd186e71aa33 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_d457944c09153dddea81208d25d46813 = $(`<div id="html_d457944c09153dddea81208d25d46813" style="width: 100.0%; height: 100.0%;">     <b>Centro Cultural San Rafael</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_bf49f5d23440b35653a8bd186e71aa33.setContent(html_d457944c09153dddea81208d25d46813);
+            
+        
+
+        marker_81bc4a4d30b9eee9227155213e39d5c1.bindPopup(popup_bf49f5d23440b35653a8bd186e71aa33)
+        ;
+
+        
+    
+    
+            marker_81bc4a4d30b9eee9227155213e39d5c1.bindTooltip(
+                `<div>
+                     Centro Cultural San Rafael
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81bc4a4d30b9eee9227155213e39d5c1.setIcon(icon_269a38e53ed455f8fcf29a652a2a89e2);
+            
+    
+            var marker_89ec6da79f1bae9154809399a72c43b9 = L.marker(
+                [-34.441498, -58.55836],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_1d73e4ce18b7cc8bffdfe5c6636dcb46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe14f77c361ed4a94a750c1b582e2b1e = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_3478760781b2dbaa88bba59eaa19e0b2 = $(`<div id="html_3478760781b2dbaa88bba59eaa19e0b2" style="width: 100.0%; height: 100.0%;">     <b>Escuela Nuestra Señora de la Misericordia</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_fe14f77c361ed4a94a750c1b582e2b1e.setContent(html_3478760781b2dbaa88bba59eaa19e0b2);
+            
+        
+
+        marker_89ec6da79f1bae9154809399a72c43b9.bindPopup(popup_fe14f77c361ed4a94a750c1b582e2b1e)
+        ;
+
+        
+    
+    
+            marker_89ec6da79f1bae9154809399a72c43b9.bindTooltip(
+                `<div>
+                     Escuela Nuestra Señora de la Misericordia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_89ec6da79f1bae9154809399a72c43b9.setIcon(icon_1d73e4ce18b7cc8bffdfe5c6636dcb46);
+            
+    
+            var marker_0406b0fe383de64aa41f5dcfc2556fe3 = L.marker(
+                [-34.441524, -58.558392],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_0ebf5bacf2093918a2b9ef9b9473175e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f186c26998544ab7f7528b8af313825f = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_905ae420d5f1b0cdadac54bd22d3bc18 = $(`<div id="html_905ae420d5f1b0cdadac54bd22d3bc18" style="width: 100.0%; height: 100.0%;">     <b>Instituto Ntra.Sra.De La Misericordia</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_f186c26998544ab7f7528b8af313825f.setContent(html_905ae420d5f1b0cdadac54bd22d3bc18);
+            
+        
+
+        marker_0406b0fe383de64aa41f5dcfc2556fe3.bindPopup(popup_f186c26998544ab7f7528b8af313825f)
+        ;
+
+        
+    
+    
+            marker_0406b0fe383de64aa41f5dcfc2556fe3.bindTooltip(
+                `<div>
+                     Instituto Ntra.Sra.De La Misericordia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0406b0fe383de64aa41f5dcfc2556fe3.setIcon(icon_0ebf5bacf2093918a2b9ef9b9473175e);
+            
+    
+            var marker_c57477101000ec3a1a2733990cdebc25 = L.marker(
+                [-34.441887, -58.557555],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_a6d5bad3f55d1fcefedbdb8b0f497116 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ff44973395c16ea231c8b250da12909 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_18bf0130d9c5eab05ad0d39970c75ead = $(`<div id="html_18bf0130d9c5eab05ad0d39970c75ead" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Adultos Nº701 Antartida Argentina</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_3ff44973395c16ea231c8b250da12909.setContent(html_18bf0130d9c5eab05ad0d39970c75ead);
+            
+        
+
+        marker_c57477101000ec3a1a2733990cdebc25.bindPopup(popup_3ff44973395c16ea231c8b250da12909)
+        ;
+
+        
+    
+    
+            marker_c57477101000ec3a1a2733990cdebc25.bindTooltip(
+                `<div>
+                     Escuela de Adultos Nº701 Antartida Argentina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c57477101000ec3a1a2733990cdebc25.setIcon(icon_a6d5bad3f55d1fcefedbdb8b0f497116);
+            
+    
+            var marker_0ae1900b26bb3d837fcae4501b61254f = L.marker(
+                [-34.446138, -58.546738],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4ae7ce8ed23d9d703812b3974d0f7c79 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d80a1dfb646eceeba83a51da21c751b3 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_ba5dc6593b4842cc191ab2f8de377f3e = $(`<div id="html_ba5dc6593b4842cc191ab2f8de377f3e" style="width: 100.0%; height: 100.0%;">     <b>Aprendizaje Cristiano Integral Buenos Aires</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_d80a1dfb646eceeba83a51da21c751b3.setContent(html_ba5dc6593b4842cc191ab2f8de377f3e);
+            
+        
+
+        marker_0ae1900b26bb3d837fcae4501b61254f.bindPopup(popup_d80a1dfb646eceeba83a51da21c751b3)
+        ;
+
+        
+    
+    
+            marker_0ae1900b26bb3d837fcae4501b61254f.bindTooltip(
+                `<div>
+                     Aprendizaje Cristiano Integral Buenos Aires
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0ae1900b26bb3d837fcae4501b61254f.setIcon(icon_4ae7ce8ed23d9d703812b3974d0f7c79);
+            
+    
+            var marker_184d8e41abc7149c027e5423d4463c65 = L.marker(
+                [-34.446151, -58.546719],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_b3dafec5fef04fabb17c74af58541e80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d85bcb8d1529aca46adfd87417ca13aa = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_78cff2def3d99d0fa4b4ffbee38d7673 = $(`<div id="html_78cff2def3d99d0fa4b4ffbee38d7673" style="width: 100.0%; height: 100.0%;">     <b>Aprendizaje Cristiano Integral Buenos Aires</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_d85bcb8d1529aca46adfd87417ca13aa.setContent(html_78cff2def3d99d0fa4b4ffbee38d7673);
+            
+        
+
+        marker_184d8e41abc7149c027e5423d4463c65.bindPopup(popup_d85bcb8d1529aca46adfd87417ca13aa)
+        ;
+
+        
+    
+    
+            marker_184d8e41abc7149c027e5423d4463c65.bindTooltip(
+                `<div>
+                     Aprendizaje Cristiano Integral Buenos Aires
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_184d8e41abc7149c027e5423d4463c65.setIcon(icon_b3dafec5fef04fabb17c74af58541e80);
+            
+    
+            var marker_5be723a420fef89914160bd58cc28327 = L.marker(
+                [-34.444437, -58.550949],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_0db30ec822bac9be33a66eb71edc0330 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7348e8b832bf6502809ed2c0535b970a = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_d56a19e82fbb23fbfa270704a6ec8e7a = $(`<div id="html_d56a19e82fbb23fbfa270704a6ec8e7a" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Secundaria Nº23 René Favaloro</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_7348e8b832bf6502809ed2c0535b970a.setContent(html_d56a19e82fbb23fbfa270704a6ec8e7a);
+            
+        
+
+        marker_5be723a420fef89914160bd58cc28327.bindPopup(popup_7348e8b832bf6502809ed2c0535b970a)
+        ;
+
+        
+    
+    
+            marker_5be723a420fef89914160bd58cc28327.bindTooltip(
+                `<div>
+                     Escuela de Educación Secundaria Nº23 René Favaloro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5be723a420fef89914160bd58cc28327.setIcon(icon_0db30ec822bac9be33a66eb71edc0330);
+            
+    
+            var marker_1e442339ff323f1406df0e409aa8b251 = L.marker(
+                [-34.446158, -58.551004],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_7673279f7e7d5e881eb762b66f1666ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c02cd609657ea729dde77b3c0d426f78 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_a49d5625bcb0d477c0b344dd1d58029f = $(`<div id="html_a49d5625bcb0d477c0b344dd1d58029f" style="width: 100.0%; height: 100.0%;">     <b>Escuela Secundaria 6 José Gervasio de Artigas</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_c02cd609657ea729dde77b3c0d426f78.setContent(html_a49d5625bcb0d477c0b344dd1d58029f);
+            
+        
+
+        marker_1e442339ff323f1406df0e409aa8b251.bindPopup(popup_c02cd609657ea729dde77b3c0d426f78)
+        ;
+
+        
+    
+    
+            marker_1e442339ff323f1406df0e409aa8b251.bindTooltip(
+                `<div>
+                     Escuela Secundaria 6 José Gervasio de Artigas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e442339ff323f1406df0e409aa8b251.setIcon(icon_7673279f7e7d5e881eb762b66f1666ea);
+            
+    
+            var marker_1464f6dfaa2090ff1d599aea20406aff = L.marker(
+                [-34.446323, -58.551256],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_e9019e545a35abe848ddf04e56737374 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f0a1c6cee8c5fdaca90ce0d52ed3c5e2 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_66ac284dab18de4cda372cdca830b47b = $(`<div id="html_66ac284dab18de4cda372cdca830b47b" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Secundaria 3 Juan N. Madero</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_f0a1c6cee8c5fdaca90ce0d52ed3c5e2.setContent(html_66ac284dab18de4cda372cdca830b47b);
+            
+        
+
+        marker_1464f6dfaa2090ff1d599aea20406aff.bindPopup(popup_f0a1c6cee8c5fdaca90ce0d52ed3c5e2)
+        ;
+
+        
+    
+    
+            marker_1464f6dfaa2090ff1d599aea20406aff.bindTooltip(
+                `<div>
+                     Escuela de Educación Secundaria 3 Juan N. Madero
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1464f6dfaa2090ff1d599aea20406aff.setIcon(icon_e9019e545a35abe848ddf04e56737374);
+            
+    
+            var marker_c68c9f8d1f17aeab06247cb6613d1dca = L.marker(
+                [-34.446061, -58.551597],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_60f76fab46d142e03635123922f9458b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e26cce145d213bc5cf8862341c7f0de = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_20eaae5799617f4c1f71f29f662383a6 = $(`<div id="html_20eaae5799617f4c1f71f29f662383a6" style="width: 100.0%; height: 100.0%;">     <b>Escuela Primaria 40 José Gervasio Artigas</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_4e26cce145d213bc5cf8862341c7f0de.setContent(html_20eaae5799617f4c1f71f29f662383a6);
+            
+        
+
+        marker_c68c9f8d1f17aeab06247cb6613d1dca.bindPopup(popup_4e26cce145d213bc5cf8862341c7f0de)
+        ;
+
+        
+    
+    
+            marker_c68c9f8d1f17aeab06247cb6613d1dca.bindTooltip(
+                `<div>
+                     Escuela Primaria 40 José Gervasio Artigas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c68c9f8d1f17aeab06247cb6613d1dca.setIcon(icon_60f76fab46d142e03635123922f9458b);
+            
+    
+            var marker_81ea8972e91505cf6df7c62216975b25 = L.marker(
+                [-34.442886, -58.555953],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4293a1b6bcc380c02abe2213ea731dcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a732998ce8e7971d8114b1b062cfcc2b = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_e131c7a8144eb5eca9f02661991ae05b = $(`<div id="html_e131c7a8144eb5eca9f02661991ae05b" style="width: 100.0%; height: 100.0%;">     <b>Instituto Escuela de Enfermeria Y Espec.Paramedicas Cruz Roja</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_a732998ce8e7971d8114b1b062cfcc2b.setContent(html_e131c7a8144eb5eca9f02661991ae05b);
+            
+        
+
+        marker_81ea8972e91505cf6df7c62216975b25.bindPopup(popup_a732998ce8e7971d8114b1b062cfcc2b)
+        ;
+
+        
+    
+    
+            marker_81ea8972e91505cf6df7c62216975b25.bindTooltip(
+                `<div>
+                     Instituto Escuela de Enfermeria Y Espec.Paramedicas Cruz Roja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81ea8972e91505cf6df7c62216975b25.setIcon(icon_4293a1b6bcc380c02abe2213ea731dcc);
+            
+    
+            var marker_71c9e427ce36e03a7268faadb7408519 = L.marker(
+                [-34.441579, -58.55763],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_16339255ba8b967ff747456c5bf9ea78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c2d19dd52cd7bf8fee0891188d9a4b0 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_bf28d347d42a917d33d1d838f2b9e9f2 = $(`<div id="html_bf28d347d42a917d33d1d838f2b9e9f2" style="width: 100.0%; height: 100.0%;">     <b>Escuela de Educación Secundaria Nº12</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_4c2d19dd52cd7bf8fee0891188d9a4b0.setContent(html_bf28d347d42a917d33d1d838f2b9e9f2);
+            
+        
+
+        marker_71c9e427ce36e03a7268faadb7408519.bindPopup(popup_4c2d19dd52cd7bf8fee0891188d9a4b0)
+        ;
+
+        
+    
+    
+            marker_71c9e427ce36e03a7268faadb7408519.bindTooltip(
+                `<div>
+                     Escuela de Educación Secundaria Nº12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_71c9e427ce36e03a7268faadb7408519.setIcon(icon_16339255ba8b967ff747456c5bf9ea78);
+            
+    
+            var marker_9ad75cae1cf549c8245b20704f2e5dab = L.marker(
+                [-34.444018, -58.557506],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4fc6d9f36dc87dd361d7d35ca1c1d801 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f92f1287b447784eee61e20966ecf4e = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_5b7391b9905ab3644ff7d0a076470352 = $(`<div id="html_5b7391b9905ab3644ff7d0a076470352" style="width: 100.0%; height: 100.0%;">     <b>Centro de Formacion Laboral Nº1 Xul Solar</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_0f92f1287b447784eee61e20966ecf4e.setContent(html_5b7391b9905ab3644ff7d0a076470352);
+            
+        
+
+        marker_9ad75cae1cf549c8245b20704f2e5dab.bindPopup(popup_0f92f1287b447784eee61e20966ecf4e)
+        ;
+
+        
+    
+    
+            marker_9ad75cae1cf549c8245b20704f2e5dab.bindTooltip(
+                `<div>
+                     Centro de Formacion Laboral Nº1 Xul Solar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ad75cae1cf549c8245b20704f2e5dab.setIcon(icon_4fc6d9f36dc87dd361d7d35ca1c1d801);
+            
+    
+            var marker_0147a59d423442e9d6b91c72e380ecde = L.marker(
+                [-34.449804, -58.564202],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4e8ad4d762b79745713576393633db57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a46f2c7f19fe6e7389faf3e51f17e22 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_3976d893fd67dab109bd360de7992c06 = $(`<div id="html_3976d893fd67dab109bd360de7992c06" style="width: 100.0%; height: 100.0%;">     <b>Escuela Especial 502</b><br>     Tipo: Educacion<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_8a46f2c7f19fe6e7389faf3e51f17e22.setContent(html_3976d893fd67dab109bd360de7992c06);
+            
+        
+
+        marker_0147a59d423442e9d6b91c72e380ecde.bindPopup(popup_8a46f2c7f19fe6e7389faf3e51f17e22)
+        ;
+
+        
+    
+    
+            marker_0147a59d423442e9d6b91c72e380ecde.bindTooltip(
+                `<div>
+                     Escuela Especial 502
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0147a59d423442e9d6b91c72e380ecde.setIcon(icon_4e8ad4d762b79745713576393633db57);
+            
+    
+            var marker_2a9e81d58b6d4a1afa90b2ac6ed3d76d = L.marker(
+                [-34.456206, -58.568931],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_1034abe3722b7649265f63fc19e59dd4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a73fec7caf75cf67b1482e4e677791e7 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_a4bfe4391b7ce1dae62c3f3ab276a3a1 = $(`<div id="html_a4bfe4391b7ce1dae62c3f3ab276a3a1" style="width: 100.0%; height: 100.0%;">     <b>Centro De Salud Maria Isabel</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_a73fec7caf75cf67b1482e4e677791e7.setContent(html_a4bfe4391b7ce1dae62c3f3ab276a3a1);
+            
+        
+
+        marker_2a9e81d58b6d4a1afa90b2ac6ed3d76d.bindPopup(popup_a73fec7caf75cf67b1482e4e677791e7)
+        ;
+
+        
+    
+    
+            marker_2a9e81d58b6d4a1afa90b2ac6ed3d76d.bindTooltip(
+                `<div>
+                     Centro De Salud Maria Isabel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a9e81d58b6d4a1afa90b2ac6ed3d76d.setIcon(icon_1034abe3722b7649265f63fc19e59dd4);
+            
+    
+            var marker_674c3201218c7a30bd9ed844e24c58e2 = L.marker(
+                [-34.446571, -58.566892],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_b2c9b5599e1a2acb1fc321ecef924a0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85066762be21477c440ab9cc863c5657 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_528342c49e07ec88689ca922b507b90b = $(`<div id="html_528342c49e07ec88689ca922b507b90b" style="width: 100.0%; height: 100.0%;">     <b>Unidad De Diagnostico Precoz 27</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_85066762be21477c440ab9cc863c5657.setContent(html_528342c49e07ec88689ca922b507b90b);
+            
+        
+
+        marker_674c3201218c7a30bd9ed844e24c58e2.bindPopup(popup_85066762be21477c440ab9cc863c5657)
+        ;
+
+        
+    
+    
+            marker_674c3201218c7a30bd9ed844e24c58e2.bindTooltip(
+                `<div>
+                     Unidad De Diagnostico Precoz 27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_674c3201218c7a30bd9ed844e24c58e2.setIcon(icon_b2c9b5599e1a2acb1fc321ecef924a0d);
+            
+    
+            var marker_7239f9d499d8db26f991eec477d4cf6f = L.marker(
+                [-34.451627, -58.562389],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_ec83d819f9d93105b69c027fe0bc15f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9d8cf77c73e85627dde32de156f07b6 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_9ec10176bec92562938e64b5d9ce2703 = $(`<div id="html_9ec10176bec92562938e64b5d9ce2703" style="width: 100.0%; height: 100.0%;">     <b>Centro De Salud 26</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_d9d8cf77c73e85627dde32de156f07b6.setContent(html_9ec10176bec92562938e64b5d9ce2703);
+            
+        
+
+        marker_7239f9d499d8db26f991eec477d4cf6f.bindPopup(popup_d9d8cf77c73e85627dde32de156f07b6)
+        ;
+
+        
+    
+    
+            marker_7239f9d499d8db26f991eec477d4cf6f.bindTooltip(
+                `<div>
+                     Centro De Salud 26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7239f9d499d8db26f991eec477d4cf6f.setIcon(icon_ec83d819f9d93105b69c027fe0bc15f7);
+            
+    
+            var marker_332b7eca115c4691947bcdb2d0148633 = L.marker(
+                [-34.433778, -58.558288],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_0527e1de0e1c932c4b2f727fb47b1c38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a7d1072484654f69428f43820466ee6 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_d059b6e55f07fe07e508b0fb520be1f2 = $(`<div id="html_d059b6e55f07fe07e508b0fb520be1f2" style="width: 100.0%; height: 100.0%;">     <b>Centro De Salud Doctor Arturo Reinecke</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_3a7d1072484654f69428f43820466ee6.setContent(html_d059b6e55f07fe07e508b0fb520be1f2);
+            
+        
+
+        marker_332b7eca115c4691947bcdb2d0148633.bindPopup(popup_3a7d1072484654f69428f43820466ee6)
+        ;
+
+        
+    
+    
+            marker_332b7eca115c4691947bcdb2d0148633.bindTooltip(
+                `<div>
+                     Centro De Salud Doctor Arturo Reinecke
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_332b7eca115c4691947bcdb2d0148633.setIcon(icon_0527e1de0e1c932c4b2f727fb47b1c38);
+            
+    
+            var marker_2bf867e5b4c56ec8a42190e394257375 = L.marker(
+                [-34.441109, -58.554848],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_b351580a49fa1a250af68bcdeddfd99c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb4996792dca933bc33effb7914f2288 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_56bc63532fab5df0d9adab629f8b2370 = $(`<div id="html_56bc63532fab5df0d9adab629f8b2370" style="width: 100.0%; height: 100.0%;">     <b>Clínica Privada Aránzazu</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_bb4996792dca933bc33effb7914f2288.setContent(html_56bc63532fab5df0d9adab629f8b2370);
+            
+        
+
+        marker_2bf867e5b4c56ec8a42190e394257375.bindPopup(popup_bb4996792dca933bc33effb7914f2288)
+        ;
+
+        
+    
+    
+            marker_2bf867e5b4c56ec8a42190e394257375.bindTooltip(
+                `<div>
+                     Clínica Privada Aránzazu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2bf867e5b4c56ec8a42190e394257375.setIcon(icon_b351580a49fa1a250af68bcdeddfd99c);
+            
+    
+            var marker_ed1972370b604ca8aeaabcd1f14bffc5 = L.marker(
+                [-34.436466, -58.548535],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_c8c3e7f2f403dbefbcbd70c8d46dd2cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63ee8cd1f61ea508e7c1f9c98bf5b6e9 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_694baf2767a14dfef41619c4e7f191cd = $(`<div id="html_694baf2767a14dfef41619c4e7f191cd" style="width: 100.0%; height: 100.0%;">     <b>Unidad Sanitaria Barrio Alsina</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_63ee8cd1f61ea508e7c1f9c98bf5b6e9.setContent(html_694baf2767a14dfef41619c4e7f191cd);
+            
+        
+
+        marker_ed1972370b604ca8aeaabcd1f14bffc5.bindPopup(popup_63ee8cd1f61ea508e7c1f9c98bf5b6e9)
+        ;
+
+        
+    
+    
+            marker_ed1972370b604ca8aeaabcd1f14bffc5.bindTooltip(
+                `<div>
+                     Unidad Sanitaria Barrio Alsina
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed1972370b604ca8aeaabcd1f14bffc5.setIcon(icon_c8c3e7f2f403dbefbcbd70c8d46dd2cc);
+            
+    
+            var marker_cea06900535e4a1d64d5d998d46c2a8b = L.marker(
+                [-34.449257, -58.550499],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_a35ab04c8e52795ef08c589dae81962e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_89a390de23fd1fdc84965aa73467aa68 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_529786d4382ad53fbaae40f7cf536f65 = $(`<div id="html_529786d4382ad53fbaae40f7cf536f65" style="width: 100.0%; height: 100.0%;">     <b>Centro de Salud y Vacunatorio Municipal 'San Fernando Centro'</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_89a390de23fd1fdc84965aa73467aa68.setContent(html_529786d4382ad53fbaae40f7cf536f65);
+            
+        
+
+        marker_cea06900535e4a1d64d5d998d46c2a8b.bindPopup(popup_89a390de23fd1fdc84965aa73467aa68)
+        ;
+
+        
+    
+    
+            marker_cea06900535e4a1d64d5d998d46c2a8b.bindTooltip(
+                `<div>
+                     Centro de Salud y Vacunatorio Municipal 'San Fernando Centro'
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cea06900535e4a1d64d5d998d46c2a8b.setIcon(icon_a35ab04c8e52795ef08c589dae81962e);
+            
+    
+            var marker_1c53f1549ac435bee9564ca253edb8ca = L.marker(
+                [-34.450124, -58.551063],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_13a5220e7c1b7e96c0479e1270a30982 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0bebac22e5f2537acd65db9a97d66cd = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_91913658db73f6708a83e17532ea65c5 = $(`<div id="html_91913658db73f6708a83e17532ea65c5" style="width: 100.0%; height: 100.0%;">     <b>MediPrev</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_b0bebac22e5f2537acd65db9a97d66cd.setContent(html_91913658db73f6708a83e17532ea65c5);
+            
+        
+
+        marker_1c53f1549ac435bee9564ca253edb8ca.bindPopup(popup_b0bebac22e5f2537acd65db9a97d66cd)
+        ;
+
+        
+    
+    
+            marker_1c53f1549ac435bee9564ca253edb8ca.bindTooltip(
+                `<div>
+                     MediPrev
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1c53f1549ac435bee9564ca253edb8ca.setIcon(icon_13a5220e7c1b7e96c0479e1270a30982);
+            
+    
+            var marker_173ebad4d027e062e441f815e2ae6ee3 = L.marker(
+                [-34.439425, -58.555945],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_c90b6504997f979271d85069a4355e7f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b58f5df4e22b01b6d2032ca1166caee3 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_cd078b93dc8ecee2cca445f0011ca1f4 = $(`<div id="html_cd078b93dc8ecee2cca445f0011ca1f4" style="width: 100.0%; height: 100.0%;">     <b>CIO - Centro Integral Oftalmológico</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_b58f5df4e22b01b6d2032ca1166caee3.setContent(html_cd078b93dc8ecee2cca445f0011ca1f4);
+            
+        
+
+        marker_173ebad4d027e062e441f815e2ae6ee3.bindPopup(popup_b58f5df4e22b01b6d2032ca1166caee3)
+        ;
+
+        
+    
+    
+            marker_173ebad4d027e062e441f815e2ae6ee3.bindTooltip(
+                `<div>
+                     CIO - Centro Integral Oftalmológico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_173ebad4d027e062e441f815e2ae6ee3.setIcon(icon_c90b6504997f979271d85069a4355e7f);
+            
+    
+            var marker_41baf76de950a315504970b977da6cca = L.marker(
+                [-34.43733, -58.559758],
+                {
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+        
+    
+            var icon_4451d8716d48c3d293103cd1103541ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "ok",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_21b5c5256a0e7a328aeac8bf656e9f06 = L.popup({
+  "maxWidth": 240,
+});
+
+        
+            
+                var html_48a7bb0f36e7bcbe812ac34d3cc51eaf = $(`<div id="html_48a7bb0f36e7bcbe812ac34d3cc51eaf" style="width: 100.0%; height: 100.0%;">     <b>Centro de ojos San Fernando</b><br>     Tipo: Salud<br>     Estado: <b style='color:green;'>Riesgo Bajo (Zona Segura)</b>     </div>`)[0];
+                popup_21b5c5256a0e7a328aeac8bf656e9f06.setContent(html_48a7bb0f36e7bcbe812ac34d3cc51eaf);
+            
+        
+
+        marker_41baf76de950a315504970b977da6cca.bindPopup(popup_21b5c5256a0e7a328aeac8bf656e9f06)
+        ;
+
+        
+    
+    
+            marker_41baf76de950a315504970b977da6cca.bindTooltip(
+                `<div>
+                     Centro de ojos San Fernando
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41baf76de950a315504970b977da6cca.setIcon(icon_4451d8716d48c3d293103cd1103541ac);
+            
+    
+            var layer_control_6dd9ccda3931dc1d4d0a2e930b214290_layers = {
+                base_layers : {
+                    "Esri Base Gris" : tile_layer_c489b193f38e4366240e093c6de169ec,
+                },
+                overlays :  {
+                    "Zona de Afectaci\u00f3n" : geo_json_486bddf8d3b6d41a27585d5873a23bf2,
+                },
+            };
+            let layer_control_6dd9ccda3931dc1d4d0a2e930b214290 = L.control.layers(
+                layer_control_6dd9ccda3931dc1d4d0a2e930b214290_layers.base_layers,
+                layer_control_6dd9ccda3931dc1d4d0a2e930b214290_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_1925fcd742c3564e2574c5601e385b9d);
+
+        
+</script>
+</html>
